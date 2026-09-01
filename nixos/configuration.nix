@@ -40,6 +40,10 @@
 
   programs.waybar.enable = true;
   programs.fish.enable = true; 
+  programs.starship = {
+    enable = true;
+  };
+  programs.yazi.enable = true;
 
   environment.systemPackages = with pkgs; [
     kitty
