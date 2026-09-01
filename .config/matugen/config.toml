@@ -1,0 +1,67 @@
+[config]
+reload_apps = true
+color_scheme = "dark"
+
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-color.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar-colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/matugen-hyprland.lua'
+output_path = '~/.config/hypr/matugen/matugen-hyprland.lua'
+post_hook = 'hyprctl reload'
+
+
+[templates.anyrun]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/anyrun/colors.css'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/btop.theme'
+
+[templates.zathura]
+input_path = '~/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.hyprwat]
+input_path = '~/.config/matugen/templates/hyprwat.toml'
+output_path = '~/.config/hyprwat/hyprwat.conf'
+
+[templates.opencode]
+input_path = '~/.config/matugen/templates/opencode-colors.json'
+output_path = '~/.config/opencode/themes/matugen.json'
+
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/quickshell.json'
+output_path = '~/.local/state/quickshell/generated/colors.json'
+
+[templates.quickshell_dynamic]
+input_path = '~/.config/matugen/templates/quickshell-dynamic-island.json'
+output_path = '~/.config/hypr/scripts/quickshell/qs_colors.json'
+post_hook = 'touch /tmp/qs_colors_updated'
+
+[templates.aerc]
+input_path = '~/.config/matugen/templates/aerc'
+output_path = '~/.config/aerc/stylesets/matugen'
+
+# [templates.mako]
+# input_path = '~/.config/matugen/templates/mako'
+# output_path = '~/.config/mako/mako-colors'
+# post_hook = 'makoctl reload'
+
+# [templates.waybar]
+# input_path = '~/.config/matugen/templates/colors.css'
+# output_path = '~/.config/waybar/colors.css'
+# post_hook = 'sh ~/.local/bin/scripts/reloadway'
+

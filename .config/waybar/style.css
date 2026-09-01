@@ -1,0 +1,192 @@
+@import "colors.css";
+
+* {
+  border: none;
+  border-radius: 0;
+
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: 600;
+
+  min-height: 0;
+}
+
+
+/* =========================
+   WAYBAR
+   ========================= */
+
+window#waybar {
+  background: transparent;
+  color: @on_surface;
+}
+
+
+/* =========================
+   LEFT
+   ========================= */
+
+.modules-left {
+  margin-left: 2px;
+}
+
+#cpu,
+#memory {
+  background: alpha(@surface, 0.92);
+  color: @on_surface;
+
+  padding: 0 13px;
+  margin-right: 7px;
+
+  border-radius: 18px;
+}
+
+
+/* CPU icon accent */
+
+#cpu {
+  color: @primary;
+}
+
+
+/* RAM icon accent */
+
+#memory {
+  color: @secondary;
+}
+
+
+/* =========================
+   WORKSPACES
+   ========================= */
+
+#workspaces {
+  background: alpha(@surface, 0.94);
+
+  padding: 4px 7px;
+
+  border-radius: 22px;
+}
+
+
+#workspaces button {
+  min-width: 12px;
+
+  padding: 0 8px;
+  margin: 0 2px;
+
+  color: @outline;
+
+  background: transparent;
+
+  border-radius: 14px;
+
+  transition: all 0.2s ease;
+}
+
+
+#workspaces button:hover {
+  background: alpha(@primary, 0.15);
+  color: @primary;
+}
+
+
+#workspaces button.active {
+  min-width: 30px;
+
+  background: @primary;
+  color: @on_primary;
+
+  border-radius: 14px;
+}
+
+
+#workspaces button.urgent {
+  background: @error;
+  color: @on_error;
+}
+
+
+/* =========================
+   RIGHT MODULES
+   ========================= */
+
+#pulseaudio,
+#bluetooth,
+#clock,
+#tray {
+  background: alpha(@surface, 0.92);
+  color: @on_surface;
+
+  margin-left: 7px;
+
+  border-radius: 18px;
+}
+
+
+/* Round icon buttons */
+
+#pulseaudio,
+#bluetooth {
+  min-width: 34px;
+
+  padding: 0 3px;
+}
+
+
+/* Clock pill */
+
+#clock {
+  padding: 0 14px;
+}
+
+
+/* Tray */
+
+#tray {
+  padding: 0 11px;
+}
+
+
+/* =========================
+   STATES
+   ========================= */
+
+#pulseaudio {
+  color: @primary;
+}
+
+#pulseaudio.muted {
+  color: @outline;
+}
+
+
+#bluetooth {
+  color: @secondary;
+}
+
+#bluetooth.disabled {
+  color: @outline;
+}
+
+#bluetooth.connected {
+  color: @primary;
+}
+
+
+/* =========================
+   TOOLTIP
+   ========================= */
+
+tooltip {
+  background: alpha(@surface, 0.97);
+
+  border: 1px solid @outline_variant;
+  border-radius: 14px;
+}
+
+tooltip label {
+  color: @on_surface;
+
+  padding: 6px;
+}
