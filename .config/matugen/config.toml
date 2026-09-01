@@ -55,13 +55,14 @@ post_hook = 'touch /tmp/qs_colors_updated'
 input_path = '~/.config/matugen/templates/aerc'
 output_path = '~/.config/aerc/stylesets/matugen'
 
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty.conf'
+output_path = '~/.config/kitty/matugen.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
+
 # [templates.mako]
 # input_path = '~/.config/matugen/templates/mako'
 # output_path = '~/.config/mako/mako-colors'
 # post_hook = 'makoctl reload'
 
-# [templates.waybar]
-# input_path = '~/.config/matugen/templates/colors.css'
-# output_path = '~/.config/waybar/colors.css'
-# post_hook = 'sh ~/.local/bin/scripts/reloadway'
 

@@ -26,3 +26,11 @@ abbr -a gs 'git status'
 abbr -a ll 'eza -la --icons'
 abbr -a la 'eza -a --icons'
 abbr -a lt 'eza --tree --icons'
+
+# Dotfiles
+function dots
+    git -C ~/dotfiles add -A
+    git -C ~/dotfiles commit -m (string join ' ' $argv)
+    git -C ~/dotfiles push
+end
+
