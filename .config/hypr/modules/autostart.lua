@@ -1,8 +1,9 @@
 hl.on("hyprland.start",
   function()
     local autostart = {
-      "waybar",
-      "awww-daemon"
+      "wayle",
+      "awww-daemon",
+      "fcitx5 -d"
     }
 
     for _, app in ipairs(autostart) do

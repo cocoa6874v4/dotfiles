@@ -38,7 +38,6 @@
     defaultEditor = true;
   };
 
-  programs.waybar.enable = true;
   programs.fish.enable = true; 
   programs.starship = {
     enable = true;
@@ -56,6 +55,11 @@
     awww
     fastfetch
     zoxide
+    vesktop
+    wayle
+    fzf
+    fd
+    ripgrep
   ];
 
   fonts.packages = with pkgs; [
@@ -86,6 +90,20 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
+  };
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+
+    fcitx5 = {
+      waylandFrontend = true;
+
+      addons = with pkgs; [
+        fcitx5-gtk
+        qt6Packages.fcitx5-skk-qt
+      ];
+    };
   };
 
   # Configure keymap in X11
