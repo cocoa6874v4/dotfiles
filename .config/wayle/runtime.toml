@@ -1,25 +1,46 @@
 [bar]
 scale = 0.8500000238418579
-button-variant = "basic"
+module-gap = 1.0
+bg = "transparent"
+background-opacity = 83
+button-variant = "icon-square"
+button-rounding = "lg"
+button-group-rounding = "lg"
+dropdown-opacity = 94
 
 [[bar.layout]]
 monitor = "*"
 show = true
 left = [
-    "media",
-    "cpu",
     "dashboard",
-    "hyprsunset",
+    { name = "cpuandram", modules = [
+    "cpu",
     "ram",
+] },
+    "network",
+]
+center = [
+    "media",
     "hyprland-workspaces",
 ]
-center = ["clock"]
 right = [
+    "clock",
     "bluetooth",
-    "network",
+    { name = "group", modules = [
     "microphone",
     "volume",
+] },
+    "notifications",
+    "systray",
 ]
 
-[styling]
-theme-provider = "matugen"
+[modules.hyprland-workspaces]
+min-workspace-count = 5
+monitor-specific = false
+app-icons-show = true
+
+[wallpaper]
+engine-enabled = false
+transition-type = "fade"
+cycling-directory = "/home/cocoa6874/Pictures/Wallpapers/"
+cycling-interval-mins = 1

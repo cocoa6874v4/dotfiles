@@ -1,1 +1,20 @@
-# Wayle configuration file
+imports = ["matugen.toml"]
+
+[bar]
+background-opacity = 0
+
+inset-edge = 0.6
+inset-ends = 0.8
+
+padding = 0.25
+module-gap = 0.7
+
+button-rounding = "full"
+button-group-rounding = "full"
+
+button-border-location = "none"
+button-group-border-location = "none"
+
+button-group-padding = 0.15
+
+

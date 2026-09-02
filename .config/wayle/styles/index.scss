@@ -1,2 +1,160 @@
-// Custom Wayle styles. Anything here overrides the built-in styling.
-// Use @import "name" to bring in _name.scss from this folder.
+// --------------------------------------------------
+// Global bar buttons
+// --------------------------------------------------
+
+menubutton.bar-button {
+  --bar-btn-bg: var(--bg-surface);
+  --bar-btn-label-color: var(--fg-default);
+
+  --bar-btn-icon-size: 16px;
+  --bar-btn-label-weight: 600;
+
+  margin: 3px 3px;
+  border-radius: 999px;
+
+  transition:
+    background-color 160ms ease,
+    opacity 160ms ease;
+}
+
+
+// --------------------------------------------------
+// Hover
+// --------------------------------------------------
+
+menubutton.bar-button:hover {
+  --bar-btn-bg: var(--bg-hover);
+}
+
+
+// --------------------------------------------------
+// Make selected / active-looking buttons brighter
+// --------------------------------------------------
+
+menubutton.bar-button:checked,
+menubutton.bar-button:active {
+  --bar-btn-bg: var(--accent-subtle);
+  --bar-btn-label-color: var(--accent);
+}
+
+
+// --------------------------------------------------
+// Specific modules
+// Give these classes in config.toml
+// --------------------------------------------------
+menubutton.bar-button.launcher {
+  --bar-btn-bg: var(--bg-surface);
+  --bar-btn-label-color: var(--accent);
+
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+
+// CPU + RAM style
+menubutton.bar-button.system-stat {
+  --bar-btn-bg: var(--bg-surface);
+}
+
+
+// Media
+menubutton.bar-button.media-pill {
+  --bar-btn-bg: var(--bg-surface);
+  --bar-btn-label-color: var(--accent);
+}
+
+
+// Clock
+menubutton.bar-button.clock-pill {
+  --bar-btn-bg: var(--bg-surface);
+  --bar-btn-label-color: var(--fg-default);
+
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+// Network
+menubutton.bar-button.network-pill {
+  --bar-btn-bg: var(--bg-surface);
+}
+
+
+// Battery
+menubutton.bar-button.battery-pill {
+  --bar-btn-bg: var(--bg-surface);
+}
+
+
+// --------------------------------------------------
+// Shared groups
+// --------------------------------------------------
+#system-info {
+  background: var(--bg-surface);
+  border-radius: 999px;
+
+  padding: 2px 5px;
+  margin: 3px 3px;
+}
+
+
+// right controls capsule
+#controls {
+  background: var(--bg-surface);
+  border-radius: 999px;
+
+  padding: 2px 5px;
+  margin: 3px 3px;
+}
+
+
+// workspace capsule
+#workspaces {
+  background: var(--bg-surface);
+  border-radius: 999px;
+
+  padding: 3px 8px;
+  margin: 3px 6px;
+}
+
+
+// Remove individual backgrounds when inside a capsule
+#system-info menubutton.bar-button,
+#controls menubutton.bar-button,
+#workspaces menubutton.bar-button {
+  --bar-btn-bg: transparent;
+
+  margin: 0 1px;
+}
+
+
+#system-info menubutton.bar-button:hover,
+#controls menubutton.bar-button:hover,
+#workspaces menubutton.bar-button:hover {
+  --bar-btn-bg: var(--bg-hover);
+}
+
+
+// --------------------------------------------------
+// Accent helpers
+// --------------------------------------------------
+
+.accent {
+  --bar-btn-label-color: var(--accent);
+}
+
+.blue {
+  --bar-btn-label-color: var(--blue);
+}
+
+.green {
+  --bar-btn-label-color: var(--green);
+}
+
+.yellow {
+  --bar-btn-label-color: var(--yellow);
+}
+
+.red {
+  --bar-btn-label-color: var(--red);
+}

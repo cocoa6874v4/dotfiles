@@ -60,6 +60,9 @@
     fzf
     fd
     ripgrep
+    hyprshot
+    satty
+    wl-clipboard
   ];
 
   fonts.packages = with pkgs; [

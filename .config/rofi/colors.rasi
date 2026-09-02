@@ -1,14 +1,14 @@
 * {
-    bg: #1a2120;
-    bg-alt: #252b2a;
+    bg: #212018;
+    bg-alt: #2b2a22;
 
-    fg: #dde4e2;
-    fg-muted: #bec9c6;
+    fg: #e6e2d5;
+    fg-muted: #cac7b6;
 
-    accent: #81d5cc;
-    accent-fg: #003733;
+    accent: #ceca75;
+    accent-fg: #333200;
 
-    border: #3f4947;
+    border: #49473a;
 
     error: #ffb4ab;
 }

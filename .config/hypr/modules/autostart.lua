@@ -1,7 +1,7 @@
 hl.on("hyprland.start",
   function()
     local autostart = {
-      "wayle",
+      "wayle shell",
       "awww-daemon",
       "fcitx5 -d"
     }

@@ -60,9 +60,7 @@ input_path = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/matugen.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
-# [templates.mako]
-# input_path = '~/.config/matugen/templates/mako'
-# output_path = '~/.config/mako/mako-colors'
-# post_hook = 'makoctl reload'
-
-
+[templates.wayle]
+input_path = "~/.config/matugen/templates/wayle.toml"
+output_path = "~/.config/wayle/matugen.toml"
+post_hook = "touch ~/.config/wayle/config.toml"

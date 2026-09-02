@@ -1,51 +1,51 @@
 *.default=true
 *.normal=true
 
-default.fg=#dde4e2
+default.fg=#e6e2d5
 
 error.fg=#ffb4ab
-warning.fg=#afc9e7
-success.fg=#b1ccc8
+warning.fg=#a5d0bb
+success.fg=#cbc8a4
 
-tab.fg=#899391
-tab.bg=#0e1514
-tab.selected.fg=#dde4e2
-tab.selected.bg=#0e1514
+tab.fg=#949181
+tab.bg=#14140c
+tab.selected.fg=#e6e2d5
+tab.selected.bg=#14140c
 tab.selected.bold=true
 
-border.fg=#090f0f
+border.fg=#0f0e07
 border.bold=true
 
 msglist_unread.bold=true
-msglist_flagged.fg=#2f4961
+msglist_flagged.fg=#264e3e
 msglist_flagged.bold=true
-msglist_result.fg=#81d5cc
+msglist_result.fg=#ceca75
 msglist_result.bold=true
 msglist_*.selected.bold=true
-msglist_*.selected.bg=#1a2120
+msglist_*.selected.bg=#212018
 
 dirlist_*.selected.bold=true
-dirlist_*.selected.bg=#1a2120
+dirlist_*.selected.bg=#212018
 
-statusline_default.fg=#bec9c6
-statusline_default.bg=#1a2120
+statusline_default.fg=#cac7b6
+statusline_default.bg=#212018
 statusline_error.bold=true
 statusline_success.bold=true
 
-selector_focused.bg=#1a2120
+selector_focused.bg=#212018
 
-completion_default.selected.bg=#1a2120
+completion_default.selected.bg=#212018
 
 [viewer]
-url.fg=#81d5cc
+url.fg=#ceca75
 url.underline=true
 header.bold=true
 signature.dim=true
 diff_meta.bold=true
-diff_chunk.fg=#81d5cc
-diff_chunk_func.fg=#81d5cc
+diff_chunk.fg=#ceca75
+diff_chunk_func.fg=#ceca75
 diff_chunk_func.bold=true
-diff_add.fg=#b1ccc8
+diff_add.fg=#cbc8a4
 diff_del.fg=#ffb4ab
-quote_*.fg=#899391
-quote_1.fg=#bec9c6
+quote_*.fg=#949181
+quote_1.fg=#cac7b6
