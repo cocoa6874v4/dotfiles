@@ -71,6 +71,8 @@
     gdb
     pkg-config
     unzip
+    wakatime-cli
+    python313
   ];
 
   fonts.packages = with pkgs; [
