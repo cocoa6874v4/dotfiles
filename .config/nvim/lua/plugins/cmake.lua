@@ -76,9 +76,6 @@ return {
             map("n", "<leader>cd", "<cmd>CMakeDebug<CR>", keyopts)
             map("n", "<leader>cc", "<cmd>CMakeClean<CR>", keyopts)
             map("n", "<leader>ct", "<cmd>CMakeRunTest<CR>", keyopts)
-            map("n", "<leader>cs", "<cmd>CMakeSelectBuildType<CR>", keyopts)
-            map("n", "<leader>cT", "<cmd>CMakeSelectBuildTarget<CR>", keyopts)
-            map("n", "<leader>cL", "<cmd>CMakeSelectLaunchTarget<CR>", keyopts)
             map("n", "<leader>ca", "<cmd>CMakeLaunchArgs<CR>", keyopts)
             map("n", "<leader>co", "<cmd>OverseerToggle<CR>", keyopts)
         end,
