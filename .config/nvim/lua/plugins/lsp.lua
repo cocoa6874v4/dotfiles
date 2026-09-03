@@ -44,7 +44,6 @@ return {
                 "rust_analyzer",
             }
 
-            -- 全LSPにblink.cmpのcapabilitiesを適用
             for _, server in ipairs(servers) do
                 vim.lsp.config(server, {
                     capabilities = capabilities,
