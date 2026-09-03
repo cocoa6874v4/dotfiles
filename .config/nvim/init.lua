@@ -25,15 +25,6 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.guifont = "UDEV Gothic 35NFLG:h14"
 
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-
--- vim.opt.shell = "pwsh"
--- vim.opt.shellcmdflag = "-NoLogo -Command"
--- vim.opt.shellquote = ""
--- vim.opt.shellxquote = ""
-
-
 vim.keymap.set("n", "<leader>cp", function()
   require("config.project_picker").open_projects()
 end, { desc = "Open project" })

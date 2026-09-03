@@ -43,6 +43,7 @@
     enable = true;
   };
   programs.yazi.enable = true;
+  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     kitty
@@ -63,6 +64,13 @@
     hyprshot
     satty
     wl-clipboard
+    gcc
+    clang-tools
+    cmake
+    ninja
+    gdb
+    pkg-config
+    unzip
   ];
 
   fonts.packages = with pkgs; [

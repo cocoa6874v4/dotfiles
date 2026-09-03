@@ -24,20 +24,26 @@ center = [
     "hyprland-workspaces",
 ]
 right = [
-    "clock",
     "bluetooth",
-    { name = "group", modules = [
-    "microphone",
-    "volume",
-] },
+    { name = "group", modules = ["volume"] },
     "notifications",
+    "clock",
     "systray",
 ]
+
+[modules.bluetooth]
+label-show = false
+
+[modules.clock]
+format = "%I:%M %p"
 
 [modules.hyprland-workspaces]
 min-workspace-count = 5
 monitor-specific = false
 app-icons-show = true
+
+[modules.volume]
+label-show = false
 
 [wallpaper]
 engine-enabled = false
