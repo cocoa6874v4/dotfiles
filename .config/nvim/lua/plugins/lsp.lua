@@ -154,6 +154,38 @@ return {
 
             keymap = {
                 preset = "super-tab",
+
+                ["<Tab>"] = {
+                    function(cmp)
+                        if cmp.snippet_active() then
+                            return cmp.accept()
+                        else
+                            return cmp.select_and_accept()
+                        end
+                    end,
+
+                    "snippet_forward",
+
+                    function()
+                        local line = vim.api.nvim_get_current_line()
+                        local col = vim.fn.col(".")
+                        local next_char = line:sub(col, col)
+
+                        local closers = {
+                            [")"] = true,
+                            ["]"] = true,
+                            ["}"] = true,
+                            ['"'] = true,
+                            ["'"] = true,
+                        }
+
+                        if closers[next_char] then
+                            return "<Right>"
+                        end
+                    end,
+
+                    "fallback",
+                },
             },
 
             sources = {
