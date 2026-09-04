@@ -1,6 +1,6 @@
 local manual_path = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter"
 if vim.loop.fs_stat(manual_path) then
-  vim.opt.rtp:prepend(manual_path)
+    vim.opt.rtp:prepend(manual_path)
 end
 
 vim.g.mapleader = " "
@@ -25,14 +25,14 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.guifont = "UDEV Gothic 35NFLG:h14"
 
-vim.keymap.set("n", "<leader>cp", function()
-  require("config.project_picker").open_projects()
-end, { desc = "Open project" })
+-- keybinds
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 vim.opt.clipboard = "unnamedplus"
 
 vim.filetype.add({
-  extension = {
-    slint = "slint",
-  },
+    extension = {
+        slint = "slint",
+    },
 })
