@@ -14,7 +14,7 @@ return {
         t({ ")", "set(CMAKE_CXX_STANDARD_REQUIRED ON)", "set(CMAKE_CXX_EXTENSIONS OFF)", "", "add_executable(" }),
         rep(1),
         t({ "", "\t" }),
-        i(3, "src/main.cpp"),
+        i(3, "src/main.cpp)"),
     }),
 
     -- target_include_directories
@@ -70,4 +70,3 @@ return {
     }),
 
 }
-

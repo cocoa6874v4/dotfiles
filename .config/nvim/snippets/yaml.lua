@@ -15,6 +15,7 @@ return {
             "  choices:",
             "    release:",
             "      short: Release",
+            "      long: Release",
             "      buildType: Release",
         }),
     }),
