@@ -73,6 +73,7 @@
     unzip
     wakatime-cli
     python313
+    phinger-cursors
   ];
 
   fonts.packages = with pkgs; [

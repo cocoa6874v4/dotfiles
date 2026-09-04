@@ -8,14 +8,17 @@ require("modules.monitor")
 -------------------
 require("modules.autostart")
 
+
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
+hl.env("XCURSOR_THEME", "phinger-cursors-dark")
+hl.env("XCURSOR_SIZE", "32")
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "phinger-cursors-dark")
+hl.env("HYPRCURSOR_SIZE", "32")
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -43,8 +46,8 @@ require("modules.keybinds")
 
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+    name           = "suppress-maximize-events",
+    match          = { class = ".*" },
 
     suppress_event = "maximize",
 })
@@ -52,8 +55,8 @@ local suppressMaximizeRule = hl.window_rule({
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
+    name     = "fix-xwayland-drags",
+    match    = {
         class      = "^$",
         title      = "^$",
         xwayland   = true,
@@ -72,4 +75,3 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
-
