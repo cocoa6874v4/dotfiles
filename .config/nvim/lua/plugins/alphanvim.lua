@@ -1,63 +1,43 @@
 return {
-  "goolord/alpha-nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
+    "goolord/alpha-nvim",
 
-    local src_dir = vim.fn.expand("~/Src")
+    config = function()
+        local alpha = require("alpha")
+        local dashboard = require("alpha.themes.dashboard")
 
-    local function get_project_buttons()
-      local buttons = {}
-      local uv = vim.uv or vim.loop
-      local fd = uv.fs_scandir(src_dir)
+        dashboard.section.buttons.val = {
+            dashboard.button(
+                "p",
+                "󰏓  Projects",
+                "<cmd>Telescope projects<CR>"
+            ),
 
-      if not fd then return buttons end
+            dashboard.button(
+                "f",
+                "󰱼  Find File",
+                "<cmd>Telescope find_files<CR>"
+            ),
 
-      local shortcuts = { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "1", "2", "3" }
-      local i = 1
+            dashboard.button(
+                "r",
+                "󰋚  Recent Files",
+                "<cmd>Telescope oldfiles<CR>"
+            ),
 
-      while true do
-        local name, typ = uv.fs_scandir_next(fd)
-        if not name then break end
+            dashboard.button(
+                "c",
+                "  Neovim Config",
+                "<cmd>cd ~/.config/nvim | Telescope find_files<CR>"
+            ),
 
-        if typ == "directory" then
-          local shortcut = shortcuts[i] or tostring(i)
-          local path = src_dir .. "/" .. name
+            dashboard.button(
+                "q",
+                "󰅚  Quit",
+                "<cmd>qa<CR>"
+            ),
+        }
 
-          local action = "<cmd>cd " .. path .. " | e .<CR>"
-
-          local btn = dashboard.button(shortcut, "󰉋  " .. name, action)
-          table.insert(buttons, btn)
-          i = i + 1
-        end
-      end
-      return buttons
-    end
-
-    dashboard.section.header.val = {
-      "                                                     ",
-      "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██████╗ ███╗   ███╗",
-      "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██╔══██╗████╗ ████║",
-      "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██████╔╝██╔████╔██║",
-      "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██╔══██╗██║╚██╔╝██║",
-      "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║  ██║██║ ╚═╝ ██║",
-      "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝     ╚═╝",
-      "                                                     ",
-    }
-
-    local all_buttons = {}
-    
-    for _, btn in ipairs(get_project_buttons()) do
-      table.insert(all_buttons, btn)
-    end
-
-    table.insert(all_buttons, { type = "padding", val = 1 })
-    
-    table.insert(all_buttons, dashboard.button("q", "󰅙  Quit Neovim", "<cmd>qa<CR>"))
-
-    dashboard.section.buttons.val = all_buttons
-
-    alpha.setup(dashboard.opts)
-  end
+        alpha.setup(dashboard.config)
+    end,
 }
+
