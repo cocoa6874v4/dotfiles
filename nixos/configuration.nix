@@ -75,6 +75,7 @@
     python313
     phinger-cursors
     protonvpn-gui
+    foliate
   ];
 
   fonts.packages = with pkgs; [
