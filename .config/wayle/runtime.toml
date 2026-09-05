@@ -1,5 +1,6 @@
 [bar]
 scale = 0.8500000238418579
+padding = 0.0
 module-gap = 1.0
 bg = "transparent"
 background-opacity = 83
