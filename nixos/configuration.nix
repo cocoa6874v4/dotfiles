@@ -74,6 +74,7 @@
     wakatime-cli
     python313
     phinger-cursors
+    protonvpn-gui
   ];
 
   fonts.packages = with pkgs; [
