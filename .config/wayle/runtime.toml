@@ -18,7 +18,6 @@ left = [
     "cpu",
     "ram",
 ] },
-    "network",
 ]
 center = [
     "media",
