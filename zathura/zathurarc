@@ -1,0 +1,72 @@
+set default-bg              "rgba(51, 50, 0, 1)"
+set default-fg              "#ceca75"
+
+set statusbar-bg            "#333200"
+set statusbar-fg            "#ceca75"
+
+set inputbar-bg             "#333200"
+set inputbar-fg             "#ceca75"
+
+set notification-error-bg   "#690005"
+set notification-error-fg   "#ffb4ab"
+
+set notification-warning-bg "#ebe68e"
+set notification-warning-fg "#93000a"
+
+set highlight-color         "#ebe68e"
+set highlight-active-color  "#ceca75"
+
+set completion-highlight-fg "#333200"
+set completion-highlight-bg #ceca75""
+
+set completion-bg           "#333200"
+set completion-fg           "#ceca75"
+
+set notification-bg         "#333200"
+set notification-fg         "#ceca75"
+
+set recolor                 "true"
+set recolor-lightcolor      "rgba(51, 50, 0, 1)"
+set recolor-darkcolor       "#ceca75"
+set recolor-reverse-video   "true"
+set recolor-keephue         "true"
+
+set selection-clipboard clipboard
+
+set incremental-search true
+set search-hadjust true
+
+set adjust-open width
+
+set font "JetBrainsMono Nerd Font Propo 12"
+
+set guioptions none
+map [normal]     z zoom in
+map [normal]     Z zoom out
+map [fullscreen] z zoom in
+map [fullscreen] Z zoom out
+
+map [normal]     D toggle_page_mode
+map [fullscreen] D toggle_page_mode
+
+map [normal]     u scroll half-up
+map [normal]     d scroll half-down
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+
+map [normal]     f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+map [normal]     <C-r> reload
+map [fullscreen] <C-r> reload
+
+map [normal]     b toggle_statusbar
+map [fullscreen] b toggle_statusbar
+
+map [normal]     H adjust_window best-fit
+map [normal]     W adjust_window width
+map [fullscreen] H adjust_window best-fit
+map [fullscreen] W adjust_window width
+
+map [normal]     i set recolor
+map [fullscreen] i set recolor

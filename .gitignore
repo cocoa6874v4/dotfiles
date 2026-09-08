@@ -1,0 +1,12 @@
+mozilla/
+obsidian/
+pulse/
+dconf/
+vesktop/
+Proton/
+
+**/Cache/
+**/cache/
+**/GPUCache/
+**/logs/
+**/*.log

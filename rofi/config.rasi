@@ -1,0 +1,17 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+
+    drun-display-format: "{name}";
+
+    matching: "fuzzy";
+    case-sensitive: false;
+    cycle: true;
+}
+
+@theme "theme"

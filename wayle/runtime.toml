@@ -1,0 +1,52 @@
+[bar]
+scale = 0.8500000238418579
+padding = 0.0
+module-gap = 1.0
+bg = "transparent"
+background-opacity = 83
+button-variant = "icon-square"
+button-rounding = "lg"
+button-group-rounding = "lg"
+dropdown-opacity = 94
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    { name = "cpuandram", modules = [
+    "cpu",
+    "ram",
+] },
+]
+center = [
+    "media",
+    "hyprland-workspaces",
+]
+right = [
+    "bluetooth",
+    { name = "group", modules = ["volume"] },
+    "notifications",
+    "clock",
+    "systray",
+]
+
+[modules.bluetooth]
+label-show = false
+
+[modules.clock]
+format = "%I:%M %p"
+
+[modules.hyprland-workspaces]
+min-workspace-count = 5
+monitor-specific = false
+app-icons-show = true
+
+[modules.volume]
+label-show = false
+
+[wallpaper]
+engine-enabled = false
+transition-type = "fade"
+cycling-directory = "/home/cocoa6874/Pictures/Wallpapers/"
+cycling-interval-mins = 1
