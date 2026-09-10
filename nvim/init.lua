@@ -25,10 +25,6 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.guifont = "UDEV Gothic 35NFLG:h14"
 
--- keybinds
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-
 vim.opt.clipboard = "unnamedplus"
 
 vim.filetype.add({
