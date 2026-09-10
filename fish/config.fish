@@ -18,16 +18,18 @@ fish_add_path ~/.local/bin
 
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# Abbreviations
-abbr -a g git
-abbr -a ga 'git add'
-abbr -a gc 'git commit'
-abbr -a gp 'git push'
-abbr -a gs 'git status'
+function gpush
+    if test (count $argv) -eq 0
+        echo "Usage: gpush <commit message>"
+        return 1
+    end
 
-abbr -a ll 'eza -la --icons'
-abbr -a la 'eza -a --icons'
-abbr -a lt 'eza --tree --icons'
+    set message (string join " " $argv)
+
+    git add .
+    and git commit -m "$message"
+    and git push
+end
 
 # Dotfiles
 function dots
