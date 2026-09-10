@@ -45,6 +45,12 @@ function y
 	command rm -f -- "$tmp"
 end
 
+function obsidian
+    pushd /home/cocoa6874/vault/meme/ > /dev/null
+    nvim
+    popd > /dev/null
+end
+
 if status is-login
 	if test (tty) = /dev/tty1
 		exec Hyprland
