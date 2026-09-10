@@ -26,7 +26,7 @@ function gpush
 
     set message (string join " " $argv)
 
-    git add .
+    git add -A
     and git commit -m "$message"
     and git push
 end
