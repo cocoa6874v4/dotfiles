@@ -1,12 +1,12 @@
 * {
-    bg: #212018;
-    bg-alt: #2b2a22;
+    bg: #212017;
+    bg-alt: #2c2a21;
 
-    fg: #e6e2d5;
-    fg-muted: #cac7b6;
+    fg: #e7e2d5;
+    fg-muted: #cbc7b5;
 
-    accent: #ceca75;
-    accent-fg: #333200;
+    accent: #d1c973;
+    accent-fg: #353100;
 
     border: #49473a;
 

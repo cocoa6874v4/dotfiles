@@ -2,16 +2,16 @@
 theme-provider = "wayle"
 
 [styling.palette]
-bg = "#14140c"
+bg = "#15140c"
 surface = "#1d1c14"
-elevated = "#212018"
+elevated = "#212017"
 
-fg = "#e6e2d5"
-fg-muted = "#cac7b6"
+fg = "#e7e2d5"
+fg-muted = "#cbc7b5"
 
-primary = "#ceca75"
+primary = "#d1c973"
 
 red = "#ffb4ab"
-yellow = "#a5d0bb"
-green = "#cbc8a4"
-blue = "#ceca75"
+yellow = "#a6d0b9"
+green = "#cdc8a3"
+blue = "#d1c973"
