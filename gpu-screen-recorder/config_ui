@@ -4,7 +4,7 @@ main.hotkeys_enable_option enable_hotkeys_no_grab
 main.joystick_hotkeys_enable_option disable_hotkeys
 main.language 
 main.notification_speed normal
-main.show_hide_hotkey 0 0
+main.show_hide_hotkey 26 16
 main.software_encoding_warning_shown false
 main.tint_color nvidia
 main.wayland_warning_shown true
@@ -46,7 +46,7 @@ record.record_options.webcam_x 0
 record.record_options.webcam_y 0
 record.save_directory /home/cocoa6874/Videos
 record.save_video_in_game_folder false
-record.start_stop_hotkey 0 0
+record.start_stop_hotkey 86 0
 record.start_stop_region_hotkey 0 0
 record.start_stop_window_hotkey 0 0
 replay.container mp4
@@ -108,10 +108,10 @@ screenshot.restore_portal_session true
 screenshot.save_directory /home/cocoa6874/Pictures
 screenshot.save_screenshot_in_game_folder false
 screenshot.save_screenshot_to_clipboard true
-screenshot.save_screenshot_to_disk true
+screenshot.save_screenshot_to_disk false
 screenshot.show_notifications true
 screenshot.take_screenshot_hotkey 0 0
-screenshot.take_screenshot_region_hotkey 0 0
+screenshot.take_screenshot_region_hotkey 102 0
 screenshot.take_screenshot_window_hotkey 0 0
 screenshot.use_led_indicator false
 streaming.custom.container flv

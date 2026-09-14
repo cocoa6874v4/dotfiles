@@ -1,3 +1,9 @@
+if status is-login
+	if test (tty) = /dev/tty1
+		exec Hyprland
+	end
+end
+
 if status is-interactive
     fastfetch
     set -g fish_greeting
@@ -53,8 +59,4 @@ function obsidian
     popd > /dev/null
 end
 
-if status is-login
-	if test (tty) = /dev/tty1
-		exec Hyprland
-	end
-end
+
