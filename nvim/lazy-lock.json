@@ -4,6 +4,7 @@
   "aerial.nvim": { "branch": "master", "commit": "28fe6e822ae344544c379d60fcb13c9519a1f08a" },
   "alpha-nvim": { "branch": "main", "commit": "4ba26e41990c11620c96c0e1cff20eab65efde4a" },
   "barbar.nvim": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },
+  "better-escape.nvim": { "branch": "master", "commit": "3f4bc0b326606264ff75967f59091b5ddada0554" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "cmake-tools.nvim": { "branch": "master", "commit": "ee807ac4e62591720de2f6ad0abbfb966c4c7b97" },
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
