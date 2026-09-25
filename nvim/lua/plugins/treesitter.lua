@@ -3,41 +3,85 @@ return {
     branch = "main",
     lazy = false,
     build = ":TSUpdate",
+
+    dependencies = {
+        {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            branch = "main",
+        },
+    },
+
     config = function()
-        if vim.fn.has("wsl") == 1 then
-            local local_bin = vim.fn.expand("~/.local/bin")
-            vim.env.PATH = local_bin .. ":" .. vim.env.PATH
-            
-            vim.env.CC = "gcc"
-        end
+        require("nvim-treesitter").setup()
 
-        local is_windows = vim.fn.has("win32") == 1
-        local is_wsl = vim.fn.has("wsl") == 1
-        local parser_dir = vim.fn.stdpath("data") .. (is_windows and "/treesitter-win" or "/treesitter-wsl")
+        require("nvim-treesitter-textobjects").setup({
+            select = {
+                lookahead = true,
 
-	if is_wsl then
-          local local_bin = vim.fn.expand("~/.local/bin")
-          vim.env.PATH = local_bin .. ":" .. vim.env.PATH
-          vim.env.CC = "gcc"
-         elseif is_windows then
-           vim.env.CC = "clang"
-           vim.env.CXX = "clang++"
-         end
+                selection_modes = {
+                    ["@parameter.outer"] = "v",
+                    ["@function.outer"] = "V",
+                    ["@class.outer"] = "V",
+                },
+            },
 
-        if vim.fn.isdirectory(parser_dir) == 0 then
-            vim.fn.mkdir(parser_dir, "p")
-        end
-
-        require("nvim-treesitter").setup({
-            install_dir = parser_dir,
+            move = {
+                set_jumps = true,
+            },
         })
 
-        vim.api.nvim_create_autocmd("FileType", {
-            group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
-            callback = function()
-                pcall(vim.treesitter.start)
-                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-            end,
-        })
-    end
+        local select = require("nvim-treesitter-textobjects.select")
+        local move = require("nvim-treesitter-textobjects.move")
+        local swap = require("nvim-treesitter-textobjects.swap")
+
+        -- Select
+        vim.keymap.set({ "x", "o" }, "af", function()
+            select.select_textobject("@function.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "if", function()
+            select.select_textobject("@function.inner", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "ac", function()
+            select.select_textobject("@class.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "ic", function()
+            select.select_textobject("@class.inner", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "aa", function()
+            select.select_textobject("@parameter.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "ia", function()
+            select.select_textobject("@parameter.inner", "textobjects")
+        end)
+
+        -- Move
+        vim.keymap.set({ "n", "x", "o" }, "]f", function()
+            move.goto_next_start("@function.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "n", "x", "o" }, "[f", function()
+            move.goto_previous_start("@function.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "n", "x", "o" }, "]c", function()
+            move.goto_next_start("@class.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "n", "x", "o" }, "[c", function()
+            move.goto_previous_start("@class.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "a=", function()
+            select.select_textobject("@assignment.outer", "textobjects")
+        end)
+
+        vim.keymap.set({ "x", "o" }, "i=", function()
+            select.select_textobject("@assignment.rhs", "textobjects")
+        end)
+    end,
 }
