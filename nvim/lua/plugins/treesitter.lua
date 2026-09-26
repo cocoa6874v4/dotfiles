@@ -68,14 +68,6 @@ return {
             move.goto_previous_start("@function.outer", "textobjects")
         end)
 
-        vim.keymap.set({ "n", "x", "o" }, "]c", function()
-            move.goto_next_start("@class.outer", "textobjects")
-        end)
-
-        vim.keymap.set({ "n", "x", "o" }, "[c", function()
-            move.goto_previous_start("@class.outer", "textobjects")
-        end)
-
         vim.keymap.set({ "x", "o" }, "a=", function()
             select.select_textobject("@assignment.outer", "textobjects")
         end)
