@@ -79,6 +79,7 @@ return {
                 "cmake",
                 "slint_lsp",
                 "rust_analyzer",
+                "sqls",
             }
 
             for _, server in ipairs(servers) do
