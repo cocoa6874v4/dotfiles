@@ -1,66 +1,77 @@
--- ┏┓┳┓┳┳┳┓┏┓┏┳┓┳┏┓┳┓┏┓
--- ┣┫┃┃┃┃┃┃┣┫ ┃ ┃┃┃┃┃┗┓
--- ┛┗┛┗┻┛ ┗┛┗ ┻ ┻┗┛┛┗┗┛
-
--- enable animations
 hl.config({
     animations = {
         enabled = true
     }
 })
 
--- animation curves look https://cubic-bezier.com
-hl.curve("bubbles", {
-    type = "bezier",
-    points = { { 0.05, 0.9 }, { 0.1, 1.05 } }
+hl.curve("springOpen", {
+    type = "spring",
+    mass = 1,
+    stiffness = 180,
+    damping = 14
 })
 
-hl.curve("liner", {
-    type = "bezier",
-    points = { { 1, 1 }, { 1, 1 } }
+hl.curve("springMove", {
+    type = "spring",
+    mass = 1,
+    stiffness = 240,
+    damping = 20
 })
 
-hl.curve("open", {
+hl.curve("smooth", {
     type = "bezier",
-    points = { { 0, 0.18 }, { 0, 0.92 } }
+    points = { { 0.22, 1 }, { 0.36, 1 } }
 })
 
-hl.curve("close", {
+hl.curve("exit", {
     type = "bezier",
-    points = { { 0, 0.95 }, { 0.77, 0.98 } }
-})
-
-hl.curve("move", {
-    type = "bezier",
-    points = { { 1, 0.9 }, { 0.22, 0.94 } }
+    points = { { 0.6, 0 }, { 1, 1 } }
 })
 
 -- animations
 local anims = {
-    { "windowsIn",        3,  "open",    "popin 50%" },
-    { "windowsOut",       3,  "close",   "popin 60%" },
-    { "windowsMove",      3,  "move",    "slide" },
+    { "global",           4,   "smooth" },
 
-    { "global",           5,  "bubbles", "" },
-    { "border",           1,  "liner",   "" },
-    { "borderangle",      30, "liner",   "loop" },
-    { "fade",             10, "default", "" },
+    { "windowsIn",        4.2, "springOpen", "popin 85%",         "spring" },
+    { "windowsOut",       2,   "exit",       "popin 90%" },
+    { "windowsMove",      4,   "springMove", nil,                 "spring" },
 
-    { "workspacesIn",     4,  "bubbles", "slidevert" },
-    { "workspacesOut",    4,  "bubbles", "slidevert" },
+    { "border",           3,   "smooth" },
 
-    { "specialWorkspace", 4,  "bubbles", "slidefadevert 20%" },
+    { "fade",             3,   "smooth" },
+    { "fadeIn",           2.5, "smooth" },
+    { "fadeOut",          1.8, "exit" },
+    { "fadeSwitch",       2.5, "smooth" },
+    { "fadeShadow",       3,   "smooth" },
+    { "fadeGlow",         3,   "smooth" },
 
-    { "layersIn",         5,  "open",    "fade" },
-    { "layersOut",        5,  "close",   "fade" },
+    { "workspacesIn",     4.5, "springMove", "slidefade 18%",     "spring" },
+    { "workspacesOut",    4.5, "springMove", "slidefade 18%",     "spring" },
+
+    { "specialWorkspace", 4.5, "springOpen", "slidefadevert 20%", "spring" },
+
+    { "layersIn",         3,   "smooth",     "fade" },
+    { "layersOut",        2,   "exit",       "fade" },
 }
 
 for _, anim in ipairs(anims) do
-    hl.animation({
+    local opts = {
         leaf = anim[1],
         enabled = true,
         speed = anim[2],
-        bezier = anim[3],
         style = anim[4]
-    })
+    }
+
+    if anim[5] == "spring" then
+        opts.spring = anim[3]
+    else
+        opts.bezier = anim[3]
+    end
+
+    hl.animation(opts)
 end
+
+hl.animation({
+    leaf = "borderangle",
+    enabled = false
+})
