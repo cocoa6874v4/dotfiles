@@ -12,7 +12,7 @@ return {
             max_width = 40,
         },
 
-        open_automatic = true,
+        open_automatic = false,
         attach_mode = "global",
         close_on_select = false,
     },

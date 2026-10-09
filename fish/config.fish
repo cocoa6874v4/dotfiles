@@ -59,4 +59,6 @@ function obsidian
     popd > /dev/null
 end
 
-
+alias l 'eza --icons --group-directories-first'
+alias ll 'eza -la --icons --git'
+alias lt 'eza --tree --icons'
