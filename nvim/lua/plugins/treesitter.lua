@@ -75,5 +75,14 @@ return {
         vim.keymap.set({ "x", "o" }, "i=", function()
             select.select_textobject("@assignment.rhs", "textobjects")
         end)
+
+        -- Incremental Selection (Neovim 0.12+)
+        vim.keymap.set({ "n", "x" }, "<C-Space>", function()
+            vim.treesitter.select("parent")
+        end, { desc = "Expand selection" })
+
+        vim.keymap.set("x", "<BS>", function()
+            vim.treesitter.select("child")
+        end, { desc = "Shrink selection" })
     end,
 }

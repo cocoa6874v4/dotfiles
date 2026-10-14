@@ -72,7 +72,6 @@ return {
                 "clangd",
                 "html",
                 "cssls",
-                "dockerls",
                 "intelephense",
                 "astro",
                 "tailwindcss",
@@ -98,7 +97,6 @@ return {
                     "--clang-tidy",
                     "--completion-style=detailed",
                     "--header-insertion=iwyu",
-                    "--query-driver=/run/current-system/sw/bin/c++,/run/current-system/sw/bin/g++,/run/current-system/sw/bin/gcc",
                 },
             })
 
@@ -124,6 +122,16 @@ return {
                     },
                 },
             })
+
+            -- Qt
+            vim.lsp.config("qmlls", {
+                capabilities = capabilities,
+                cmd = { "qmlls6" },
+                filetypes = { "qml", "qmljs" },
+                root_markers = { "CMakeLists.txt", "qmldir", ".git" },
+            })
+
+            vim.lsp.enable("qmlls")
 
             require("mason-lspconfig").setup({
                 ensure_installed = servers,
