@@ -127,8 +127,8 @@ return {
             vim.lsp.config("qmlls", {
                 capabilities = capabilities,
                 cmd = { "qmlls6" },
-                filetypes = { "qml", "qmljs" },
-                root_markers = { "CMakeLists.txt", "qmldir", ".git" },
+                filetypes = { "qml" },
+                root_markers = { "CMakeLists.txt", ".git" },
             })
 
             vim.lsp.enable("qmlls")
